@@ -1,0 +1,4 @@
+multi-agent-orchestrator
+chainlit==1.2.0
+aiohttp
+requests
