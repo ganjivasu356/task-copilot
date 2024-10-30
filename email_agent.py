@@ -14,7 +14,7 @@ class ChainlitAgentCallbacks(AgentCallbacks):
 email_agent = BedrockLLMAgent(BedrockLLMAgentOptions(
   name="Email Agent",
   streaming=True,
-  description="Specializes in formatting emails, generating email templates. It can also help in replying to emails.",
+  description="Specializes in reading emails and summarizing them",
   model_id="meta.llama3-1-70b-instruct-v1:0",
   callbacks=ChainlitAgentCallbacks()
 ))

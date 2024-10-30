@@ -5,6 +5,8 @@ import asyncio
 import chainlit as cl
 import os
 from dotenv import load_dotenv
+from datetime import datetime
+from datetime import timedelta
 
 # Load environment variables from .env file
 load_dotenv()
@@ -27,8 +29,11 @@ def custom_headers_callback():
         'Authorization': f'Bearer {CALENDLY_AUTH_TOKEN}',
     }
 
+start_time = datetime.now().isoformat()
+end_time = (datetime.now() + timedelta(days=10)).isoformat()
+
 agent1 = ApiAgent(ApiAgentOptions(
-    endpoint = f"https://api.calendly.com/user_busy_times?user={CALENDLY_USER_URI}&start_time=2024-10-14T20%3A00%3A00.000000Z&end_time=2024-10-16T20%3A30%3A00.000000Z",
+    endpoint = f"https://api.calendly.com/user_busy_times?user={CALENDLY_USER_URI}&start_time={start_time}&end_time={end_time}",
     method = "GET",
     name = "Calendly Schedule Agent",
     description = "Specializes in Calendar scheduling",
