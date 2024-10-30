@@ -30,6 +30,7 @@ pip install -r requirements.txt
 chainlit run app.py --port 8888
 ```
 ### Agents
+This personal assistant uses [AWS Multi-Agent Orchestrator](https://awslabs.github.io/multi-agent-orchestrator/) for managing the agents. It contains following agents
 
 #### Calendar Agent
 - This agent utilizes Calendly APIs to retrieve meeting invitations to provide a summary of calendar events for the next 10 days. 
