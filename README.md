@@ -1,6 +1,7 @@
 ## AI Copilot to help in personal tasks
 
 #### Prerequisites
+- Setup [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-quickstart.html)
 - Retrieve [Calendly AUTH Token & User URI](https://developer.calendly.com/api-docs/be9b32ef4b44c-get-access-token)
 - Get [GNews API Key](https://gnews.io/docs/v4#authentication)
 - Add above keys in `.env` in the following format
@@ -12,7 +13,14 @@ CALENDLY_USER_URI=<USER_URI>
 GNEWS_API_KEY=<API_KEY>
 ```
 
-### Setup
+### Verify AWS authentication
+```
+aws sts get-caller-identity
+```
+If successful, this command will return your AWS account ID, user ID, and ARN.
+
+
+### Run
 - Install [Conda](https://docs.conda.io/projects/conda/en/latest/user-guide/install/index.html)
 ```
 conda create -p venv python=3.12
